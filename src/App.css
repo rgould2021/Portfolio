@@ -1,71 +1,158 @@
-/* General Styling */
+/* General Styles */
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #a8c0ff, #3f4c6b); /* Subtle gradient */
+  color: #333;
 }
 
-.container-fluid {
-  padding-left: 0;
-  padding-right: 0;
+/* Navbar Styles */
+.navbar {
+  background: rgba(0, 0, 0, 0.8); /* Slightly transparent */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* More pronounced shadow */
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  border-bottom: 3px solid #3498db; /* Accent border */
+  transition: background 0.3s; /* Smooth background change on scroll */
 }
 
-/* Hero Section */
+.navbar.scrolled {
+  background: #1e2a38; /* Solid color on scroll */
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  color: #ecf0f1;
+  transition: color 0.3s;
+}
+
+.navbar-brand:hover {
+  color: #3498db;
+}
+
+.navbar-nav .nav-link {
+  color: #ecf0f1 !important;
+  font-size: 1.2rem;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #3498db !important;
+  transform: scale(1.1); /* Slight zoom effect */
+}
+
+/* Header Styles */
 .hero-section {
-  background: linear-gradient(to bottom, #282c34, #20232a);
-  color: white;
+  background-size: cover;
+  color: #fff;
+  padding: 150px 20px; /* Increased padding for impact */
   text-align: center;
-  padding-top: 100px;
-  padding-bottom: 100px;
+  position: relative;
+  overflow: hidden;
 }
 
-.hero-section .btn {
-  margin-top: 20px;
-  font-size: 1.2rem;
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
-/* About Section */
-#about {
-  background: #f8f9fa;
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Darker overlay for text contrast */
+  z-index: 0;
 }
 
-#about p {
-  font-size: 1.2rem;
-  line-height: 1.6;
+.hero-section h1 {
+  font-size: 5rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Text shadow */
 }
 
-/* Services Section */
-#services {
-  background: #f8f9fa;
+.hero-section h2 {
+  font-size: 3rem;
+  font-weight: 300;
 }
 
-.service-box {
-  padding: 20px;
-  border-radius: 5px;
+.hero-section p {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+/* Section Styles */
+.section-about,
+.section-work,
+.section-contact {
+  padding: 80px 20px;
+  text-align: center;
   background: #fff;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+  margin: 30px 0;
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
 }
 
-.service-box h3 {
-  margin-top: 0;
+.section-about:hover,
+.section-work:hover,
+.section-contact:hover {
+  transform: translateY(-10px); /* Hover lift effect */
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2); /* Stronger shadow */
 }
 
-/* Portfolio Section */
-#portfolio {
-  background: #fff;
+.section-work {
+  background: #f9f9f9;
 }
 
-/* Contact Section */
-#contact {
-  background: #20232a;
+.section-title {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #1e2a38;
+  text-transform: uppercase; /* All caps for emphasis */
 }
 
-#contact form .form-control {
-  border-radius: 5px;
-  border: none;
+.section-content {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: #555;
 }
 
-#contact form .btn {
-  margin-top: 20px;
-  border-radius: 5px;
+/* Footer Styles */
+.footer {
+  background: #1e2a38;
+  color: #ecf0f1;
+  padding: 40px 20px;
+  text-align: center;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+  position: relative;
+}
+
+.footer-social-icons {
+  margin-bottom: 20px;
+}
+
+.social-icon {
+  color: #ecf0f1;
+  font-size: 2.5rem;
+  margin: 0 15px;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.social-icon:hover {
+  color: #3498db;
+  transform: rotate(20deg); /* Spin effect on hover */
+}
+
+.footer-text {
+  font-size: 1.4rem;
+  font-weight: 300;
+  margin: 0;
 }

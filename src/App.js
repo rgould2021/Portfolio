@@ -1,87 +1,90 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 function App() {
+  const [scrolling, setScrolling] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolling(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <div className="container-fluid p-0">
-      {/* Hero Section */}
-      <header className="hero-section text-white text-center py-5">
-        <div className="container">
-          <h1 className="display-4 mb-3">Hello there!</h1>
-          <h2 className="display-5 mb-4">My name is Ricky</h2>
-          <p className="lead mb-4">I am a developer from Lake Worth, FL</p>
-          <a href="#contact" className="btn btn-light btn-lg">Let's Work Together</a>
+    <div className="app-container">
+      <nav className={`navbar navbar-expand-lg navbar-dark ${scrolling ? 'scrolled' : ''}`}>
+        <a className="navbar-brand" href="#">My Portfolio</a>
+        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav ml-auto">
+            <li className="nav-item">
+              <a className="nav-link" href="#home">Home</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#about">About Me</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#work">Work</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <header id="home" className="hero-section text-center">
+        <div className="hero-content">
+          <h1 className="display-4">Hello there!</h1>
+          <h2 className="display-5">My name is Ricky</h2>
+          <p className="lead">I am a developer from Lake Worth, FL</p>
         </div>
       </header>
 
-      {/* About Section */}
-      <section id="about" className="py-5">
+      <section id="about" className="section-about">
         <div className="container">
-          <h2 className="text-center mb-4">About Me</h2>
-          <p className="lead">I’m a passionate developer specializing in creating high-quality applications and websites. With a keen eye for detail and a drive for excellence, I strive to deliver outstanding results for all my clients.</p>
+          <h2 className="section-title">About Me</h2>
+          <p className="section-content">I am passionate about technology and design, with a strong background in software development. I enjoy working on a variety of projects including app design, web design, iOS/Android applications, and more. Let's collaborate and create something amazing together!</p>
         </div>
       </section>
 
-      {/* Services Section */}
-      <section id="services" className="bg-light py-5">
+      <section id="work" className="section-work bg-light">
         <div className="container">
-          <h2 className="text-center mb-4">What I Offer</h2>
-          <div className="row">
-            <div className="col-md-4">
-              <div className="service-box text-center">
-                <h3>App Design</h3>
-                <p>Crafting intuitive and engaging mobile applications for iOS and Android platforms.</p>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="service-box text-center">
-                <h3>Web Design</h3>
-                <p>Designing modern and responsive websites to enhance your online presence.</p>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="service-box text-center">
-                <h3>Software Development</h3>
-                <p>Building robust and scalable software solutions tailored to your needs.</p>
-              </div>
-            </div>
-          </div>
+          <h2 className="section-title">My Work</h2>
+          <p className="section-content">Here are some of the projects I've worked on. Feel free to browse through my portfolio to see the range of work I've done.</p>
+          {/* Add your project details here */}
         </div>
       </section>
 
-      {/* Portfolio Section */}
-      <section id="portfolio" className="py-5">
+      <section id="contact" className="section-contact">
         <div className="container">
-          <h2 className="text-center mb-4">My Work</h2>
-          <p className="text-center">Showcase of selected projects will go here.</p>
+          <h2 className="section-title">Contact</h2>
+          <p className="section-content">Want to get in touch? Reach out to me through the contact form below or connect with me on social media.</p>
+          {/* Add your contact form or contact details here */}
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="bg-dark text-white py-5">
+      <footer className="footer">
         <div className="container">
-          <h2 className="text-center mb-4">Get in Touch</h2>
-          <div className="text-center mb-4">
-            <a href="https://github.com/rgould2021" target="_blank" rel="noopener noreferrer" className="text-light mx-2">
-              <FontAwesomeIcon icon={faGithub} className="fa-2x" />
+          <div className="footer-social-icons">
+            <a href="https://github.com/rgould2021" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faGithub} className="social-icon" />
             </a>
-            <a href="https://www.linkedin.com/in/rickygould19/" target="_blank" rel="noopener noreferrer" className="text-light mx-2">
-              <FontAwesomeIcon icon={faLinkedin} className="fa-2x" />
+            <a href="https://www.linkedin.com/in/rickygould19/" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faLinkedin} className="social-icon" />
             </a>
           </div>
-          <form className="text-center">
-            <div className="form-group">
-              <input type="text" className="form-control mb-3" placeholder="Your Name" />
-              <input type="email" className="form-control mb-3" placeholder="Your Email" />
-              <textarea className="form-control mb-3" rows="4" placeholder="Your Message"></textarea>
-              <button type="submit" className="btn btn-light">Send Message</button>
-            </div>
-          </form>
+          <p className="footer-text">Connect with me!</p>
         </div>
-      </section>
+      </footer>
     </div>
   );
 }
