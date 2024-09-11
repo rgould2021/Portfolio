@@ -9,15 +9,15 @@ body {
 
 /* Navbar Styles */
 .navbar {
-  background: rgba(0, 0, 0, 0.8); /* Slightly transparent */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* More pronounced shadow */
-  backdrop-filter: blur(10px); /* Frosted glass effect */
+  background: rgba(0, 0, 0, 0.8); /* Transparent effect */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Shadow effect */
+  backdrop-filter: blur(10px); /* Frosted glass */
   border-bottom: 3px solid #3498db; /* Accent border */
-  transition: background 0.3s; /* Smooth background change on scroll */
+  transition: background 0.3s ease; /* Smooth transition */
 }
 
 .navbar.scrolled {
-  background: #1e2a38; /* Solid color on scroll */
+  background: #1e2a38; /* Solid background on scroll */
 }
 
 .navbar-brand {
@@ -25,7 +25,7 @@ body {
   font-size: 2rem;
   letter-spacing: 2px;
   color: #ecf0f1;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
 }
 
 .navbar-brand:hover {
@@ -40,14 +40,14 @@ body {
 
 .navbar-nav .nav-link:hover {
   color: #3498db !important;
-  transform: scale(1.1); /* Slight zoom effect */
+  transform: scale(1.1); /* Hover effect */
 }
 
 /* Header Styles */
 .hero-section {
   background-size: cover;
   color: #fff;
-  padding: 150px 20px; /* Increased padding for impact */
+  padding: 150px 20px; /* Space for text */
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -67,7 +67,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Darker overlay for text contrast */
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
   z-index: 0;
 }
 
@@ -95,15 +95,15 @@ body {
   text-align: center;
   background: #fff;
   border-radius: 15px; /* Rounded corners */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1); /* Soft shadow */
   margin: 30px 0;
-  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
+  transition: transform 0.3s, box-shadow 0.3s; /* Hover transition */
 }
 
 .section-about:hover,
 .section-work:hover,
 .section-contact:hover {
-  transform: translateY(-10px); /* Hover lift effect */
+  transform: translateY(-10px); /* Lift effect */
   box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2); /* Stronger shadow */
 }
 
@@ -111,17 +111,19 @@ body {
   background: #f9f9f9;
 }
 
+/* Section title adjustment */
 .section-title {
-  font-size: 4rem;
-  margin-bottom: 20px;
-  font-weight: 700;
+  font-size: 2.5rem; /* Reduced from 4rem */
+  margin-bottom: 15px;
+  font-weight: 600;
   color: #1e2a38;
-  text-transform: uppercase; /* All caps for emphasis */
+  text-transform: uppercase;
 }
 
+/* Section content adjustment */
 .section-content {
-  font-size: 1.25rem;
-  line-height: 1.8;
+  font-size: 1.5rem; /* Slightly larger than before */
+  line-height: 1.6;
   color: #555;
 }
 
@@ -131,8 +133,7 @@ body {
   color: #ecf0f1;
   padding: 40px 20px;
   text-align: center;
-  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
-  position: relative;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.3); /* Shadow above */
 }
 
 .footer-social-icons {
@@ -148,7 +149,7 @@ body {
 
 .social-icon:hover {
   color: #3498db;
-  transform: rotate(20deg); /* Spin effect on hover */
+  transform: rotate(20deg); /* Rotate hover */
 }
 
 .footer-text {

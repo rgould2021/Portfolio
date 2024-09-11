@@ -3,22 +3,23 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import Portfolio from './Portfolio'; // Correctly importing Portfolio component
 
 function App() {
-  const [scrolling, setScrolling] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolling(window.scrollY > 50);
+    const onScroll = () => {
+      setIsScrolled(window.scrollY > 50);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   return (
-    <div className="app-container">
-      <nav className={`navbar navbar-expand-lg navbar-dark ${scrolling ? 'scrolled' : ''}`}>
+    <div className="app-wrapper">
+      <nav className={`navbar navbar-expand-lg navbar-dark ${isScrolled ? 'scrolled' : ''}`}>
         <a className="navbar-brand" href="#">My Portfolio</a>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
@@ -52,23 +53,20 @@ function App() {
       <section id="about" className="section-about">
         <div className="container">
           <h2 className="section-title">About Me</h2>
-          <p className="section-content">I am passionate about technology and design, with a strong background in software development. I enjoy working on a variety of projects including app design, web design, iOS/Android applications, and more. Let's collaborate and create something amazing together!</p>
+          <p className="section-content">
+            I am passionate about technology and design, with a strong background in software development. I enjoy working on a variety of projects including app design, web design, iOS/Android applications, and more. Let's collaborate and create something amazing together!
+          </p>
         </div>
       </section>
 
-      <section id="work" className="section-work bg-light">
-        <div className="container">
-          <h2 className="section-title">My Work</h2>
-          <p className="section-content">Here are some of the projects I've worked on. Feel free to browse through my portfolio to see the range of work I've done.</p>
-          {/* Add your project details here */}
-        </div>
-      </section>
+      <Portfolio />
 
       <section id="contact" className="section-contact">
         <div className="container">
           <h2 className="section-title">Contact</h2>
-          <p className="section-content">Want to get in touch? Reach out to me through the contact form below or connect with me on social media.</p>
-          {/* Add your contact form or contact details here */}
+          <p className="section-content">
+            Want to get in touch? Reach out to me through the contact form below or connect with me on social media.
+          </p>
         </div>
       </section>
 
