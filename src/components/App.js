@@ -65,7 +65,7 @@ function App() {
         <div className="container">
           <h2 className="section-title">Contact</h2>
           <p className="section-content">
-            Want to get in touch? Reach out to me through the contact form below or connect with me on social media.
+            Want to get in touch? Send me an email at <a href="mailto:Rickygould1997@icloud.com">Rickygould1997@icloud.com</a> 
           </p>
         </div>
       </section>
